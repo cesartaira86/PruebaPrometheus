@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pruebaprometheus
+  labels:
+    role: pruebaprometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: pruebaprometheus
+      tier: web
+  template:
+    metadata:
+      labels:
+        role: pruebaprometheus
+        tier: web
+    spec:
+      containers:
+      - name: pruebaprometheus-app
+        image: cesartaira86/pruebaprometheus:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
