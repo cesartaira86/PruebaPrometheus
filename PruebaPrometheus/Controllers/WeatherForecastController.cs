@@ -38,7 +38,7 @@ namespace PruebaPrometheus.Controllers
                 var rng = new Random();
                 
                 Random random = new Random();
-                int num = random.Next(1000);  
+                int num = random.Next(200);  
                 
                 Thread.Sleep(num);
                 return Enumerable.Range(1, 5).Select(index => new WeatherForecast
